@@ -1,0 +1,36 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a String : ");
+        String str = sc.nextLine();
+        ArrayList<String> str2 = new ArrayList<>()  ;
+        String st = "";
+        for(int i = 0;i < str.length(); i++){
+            if(str.charAt(i) == ' '){
+                str2.add(st);
+                st = "";
+            }
+            else
+            st = st + str.charAt(i);
+        }
+        String str3 = "";
+        str2.add(st);
+        for(int  i = str2.size() -1; i >=0; i-- ){
+            str3 = str3 + str2.get(i).toString() + " ";
+        }
+        int end = str3.length() - 1;
+        while(end > 0 && str3.charAt(end) == ' ')
+        end--;
+        
+        StringBuffer sb = new StringBuffer();
+        for(int i = 0; i <= end; i++)
+        sb.append(str3.charAt(i));
+        
+        
+       System.out.println(sb.toString()); 
+    }
+}
