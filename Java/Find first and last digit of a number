@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter no. : ");
+        int no = sc.nextInt();
+        int rem, fst = 0;
+        int last = no % 10;
+        while(no>0)
+      {
+        rem = no%10;
+        fst = rem;
+        no = no/10;
+    }
+    System.out.println("First Element "+ fst);
+    System.out.println("Last Element "+ last);
+    }
+}
