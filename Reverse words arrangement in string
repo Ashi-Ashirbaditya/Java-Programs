@@ -31,6 +31,6 @@ class Main{
         sb.append(str3.charAt(i));
         
         
-       System.out.println(sb.toString()); 
+       System.out.println(sb); 
     }
 }
