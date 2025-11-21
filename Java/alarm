@@ -1,0 +1,19 @@
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.Duration;
+
+public class Main {
+    public static void main(String[] args) {
+        LocalTime target = LocalTime.of(12, 9, 0);
+
+        while (true) {
+            LocalTime now = LocalTime.now(ZoneId.of("Asia/Kolkata"));
+            Duration diff = Duration.between(now, target);
+
+            if (diff.getSeconds() == 0) {
+                System.out.println("Success: Time matched!");
+                break;
+            }
+        }
+    }
+}
