@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("If convert from farenheit to celcius press 'c' and celcius to farenheit press 'f'");
+        char ch = sc.next().charAt(0);
+        if(ch == 'f')
+            cel();
+        else if(ch == 'c')
+            farh();
+        else
+            System.out.println("Wrong input");
+  }
+  static void cel(){
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter Celcius: ");
+    double celsius = sc.nextDouble();
+    double fahrenheit = (celsius * 9 / 5) + 32;
+
+    System.out.println(celsius + "C = " + fahrenheit + "F");
+  }
+  static void farh(){
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter Farenheit: ");
+    double fahrenheit = sc.nextDouble();
+    double celsius = (fahrenheit - 32) * 5 / 9;
+
+    System.out.println(fahrenheit + "F = " + celsius + "C");
+  }
+}
