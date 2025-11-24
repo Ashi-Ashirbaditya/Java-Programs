@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a String");
+        String str = sc.nextLine();
+        System.out.println("Before removing spaces length = " + str.length());
+        int end = str.length() -1;
+        while(str.charAt(end) == ' ' && end > 0)
+            end--;
+        
+        StringBuffer sb = new StringBuffer();
+        for(int i = 0; i <= end; i++)
+        sb.append(str.charAt(i));
+        
+        System.out.println("After removing spaces length = " + sb.length());
+        System.out.println(sb);
+    }
+}
