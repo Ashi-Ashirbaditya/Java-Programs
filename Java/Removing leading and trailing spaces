@@ -10,7 +10,7 @@ class Main {
             end--;
         
         int start = 0;
-        while(str.charAt(start) == ' ')
+        while(str.charAt(start) == ' ' && start <=end)
             start++;
         
         StringBuffer sb = new StringBuffer();
