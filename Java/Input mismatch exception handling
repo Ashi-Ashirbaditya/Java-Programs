@@ -1,0 +1,25 @@
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+public class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        var arr = new int[5];
+        var end = arr.length;
+        System.out.println("Enter elements in array : ");
+        try{
+            for(int i = 0; i < end; i++)
+                arr[i] = sc.nextInt();
+        }
+        
+        catch(InputMismatchException e){
+            System.out.println("Wrong input ! Please, enter an Integer");
+            System.out.println("Re-run the program");
+            return; 
+        }
+       System.out.println("Array elements are :");
+        for(int i : arr){
+            System.out.println(i);
+        }
+    }
+}
