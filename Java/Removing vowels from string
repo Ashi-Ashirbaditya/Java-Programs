@@ -1,0 +1,23 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a String : ");
+        String str = sc.nextLine();
+        StringBuilder sb = new StringBuilder();
+        ArrayList<Character> vowels = new ArrayList<>();
+        vowels.add('a'); vowels.add('e'); vowels.add('i'); vowels.add('o'); vowels.add('u');
+        vowels.add('A'); vowels.add('E'); vowels.add('I'); vowels.add('O'); vowels.add('U');
+
+        for(int i = 0; i < str.length(); i++){
+            char ch = str.charAt(i);
+            if(vowels.contains(ch) )
+                continue;
+                
+            sb.append(ch);
+        }
+        System.out.print(sb);
+    }
+}
