@@ -1,0 +1,31 @@
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter length of series : ");
+        try{
+        int len = sc.nextInt();
+        if(len <= 0){
+            System.out.println("Enter a larger number than 0");
+            return;
+        }
+        int first = 0;
+        int second = 1;
+        int res;
+        for(int i = 1; i <= len; i++){
+            System.out.println(first);
+            res = first + second;
+            first = second;
+            second = res;
+        }
+        }
+        catch(InputMismatchException e){
+            System.out.println("Invlid input, enter an integer !");
+        }
+        finally{
+            sc.close();
+        }
+    }
+}
