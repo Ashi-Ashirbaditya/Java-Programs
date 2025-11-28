@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter : ");
+        String s1 = sc.nextLine();
+        boolean r = s1.matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$");
+        
+        if(r == true){System.out.println("Success email");}
+        else{
+        System.out.println("invlid email");}
+    }
+}
