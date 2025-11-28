@@ -1,0 +1,35 @@
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        while(true){
+        System.out.print("Enter a number : ");
+        try{
+        int n = sc.nextInt();
+        int res = n;
+        int pal = 0;
+        while(n > 0){
+            int rem = n % 10;
+            pal = pal * 10 + rem;
+            n = n/10;
+        }
+        
+        if(res == pal)
+            System.out.println("Pallindrome");
+        else
+            System.out.println("Not a Pallindrome");
+            
+            break;
+        }
+        catch(InputMismatchException e){
+            System.out.println("Invalid input ! Enter an integer.");
+            sc.nextLine();
+            continue;
+        }
+    }
+        sc.close();
+
+    }
+}
