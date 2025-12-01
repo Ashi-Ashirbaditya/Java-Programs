@@ -1,0 +1,17 @@
+import java.time.Month;
+import java.time.LocalDate;
+
+class Main {
+    public static void main(String[] args) {
+  
+       LocalDate currentDate = LocalDate.now();
+       
+        int day = currentDate.getDayOfMonth();
+        Month month = currentDate.getMonth();
+        int year = currentDate.getYear();
+        
+        System.out.println("Day: " + day);
+        System.out.println("Month: " + month);
+        System.out.println("Year: " + year);
+    }
+}
