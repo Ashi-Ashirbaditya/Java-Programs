@@ -1,0 +1,16 @@
+class Main {
+    public static void main(String[] args) {
+        int arr[] = {4,2,7,3,1,6};
+        int num = findMissing(arr);
+        System.out.println("Missing number is : " + num);
+    }
+    public static int findMissing(int arr[]){
+        int len = arr.length + 1;
+        int sum = len*(len+1)/2;
+        int actualSum = 0;
+        for(int i : arr){
+            actualSum += i;
+        }
+        return sum-actualSum;
+    }
+}
