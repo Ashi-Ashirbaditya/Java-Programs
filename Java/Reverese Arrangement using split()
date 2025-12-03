@@ -8,12 +8,12 @@ public class SplitString
      Scanner sc = new Scanner(System.in);
      String str = sc.nextLine();
      String[] result = str.split(" ");
-     String str = "";
+     String str2 = "";
      for (int i= result.length-1; i >=0; i--)
      {
-         str +=(result[i]);
+         str2 += (result[i]) + " ";
      }
-     System.out.pritln(str.trim());
+     System.out.println(str2.trim());
      
      sc.close();
  }
