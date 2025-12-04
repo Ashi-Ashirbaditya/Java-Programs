@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter String : ");
+        String str = sc.nextLine().toLowerCase();
+        char arr[] = str.toCharArray();
+        int con = 0;
+        int vow = 0;
+        int num = 0;
+        int len = str.length();
+        for(int i = 0; i < str.length(); i++){
+            if(arr[i] == ' ')
+            len--;
+            if(arr[i] >= '0' && arr[i] <= '9')
+            num++;
+            if(arr[i] >= 'a' && arr[i] <= 'z'){
+                if("aeiou".contains(String.valueOf(arr[i])))
+                    vow++;
+                else
+                    con++;
+            }
+        }
+        int sp = len - (vow+ con + num);
+        int bs = str.length() - len;
+        System.out.println("Vowels" + " = " + vow);
+        System.out.println("Consonants" + " = " + con);
+        System.out.println("Numbers" + " = " + num);
+        System.out.println("Blank Spaces" + " = " + bs);
+        System.out.println("Special Characters" + " = " + sp);
+        
+        sc.close();
+    }
+}
