@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a String : ");
+        String str = sc.nextLine();
+        String arr[] = str.split("\\s+");
+        String st = "";
+        String temp = "";
+        for(var i : arr){
+            temp += i;
+            for(int j = temp.length() - 1; j >= 0; j--){
+                st += temp.charAt(j);
+            }
+            st += " ";
+            temp = "";
+        }
+        System.out.println(st.trim());
+
+        sc.close();
+    }
+}
