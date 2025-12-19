@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a String : ");
+        String str = sc.nextLine();
+
+        String[] arr = str.split("\\s+");
+        secondMostFrequent(arr);
+
+        sc.close();
+    }
+    static void secondMostFrequent(String[] st) {
+        int max1 = 0, max2 = 0;
+        String first = "", second = "";
+
+        for (int i = 0; i < st.length; i++) {
+            if (!st[i].equals(".")) {
+                int count = 1;
+
+                for (int j = i + 1; j < st.length; j++) {
+                    if (st[i].equals(st[j])) {
+                        count++;
+                        st[j] = "."; 
+                    }
+                }
+
+                if (count > max1) {
+                    max2 = max1;
+                    second = first;
+
+                    max1 = count;
+                    first = st[i];
+                }
+                else if (count > max2 && count < max1) {
+                    max2 = count;
+                    second = st[i];
+                }
+            }
+        }
+
+        if (!second.equals("")) {
+            System.out.println("Second most frequent word: " + second);
+        } else {
+            System.out.println("No second most frequent word found.");
+        }
+    }
+}
