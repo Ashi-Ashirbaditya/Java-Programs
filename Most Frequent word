@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a String : ");
+        String str = sc.nextLine();
+        String[] arr = str.split("\\s+");
+        mostFrequent(arr);
+        sc.close();
+    }
+    static void mostFrequent(String[] st) {
+        int maxCount = 0;
+        String result = "";
+        for (int i = 0; i < st.length; i++) {
+            if (!st[i].equals(".")) {
+                int count = 1;
+                for (int j = i + 1; j < st.length; j++) {
+                    if (st[i].equals(st[j])) {
+                        count++;
+                        st[j] = ".";
+                    }
+                }
+                if (count > maxCount) {
+                    maxCount = count;
+                    result = st[i];
+                }
+            }
+        }
+        System.out.println("Most frequent word: " + result);
+    }
+}
