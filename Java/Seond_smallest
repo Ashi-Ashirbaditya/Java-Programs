@@ -1,0 +1,18 @@
+class Main {
+    public static void main(String[] args) {
+        int arr[] = {4, 2, 9, 1, 7};
+        int smallest = Integer.MAX_VALUE;
+        int second_smallest = Integer.MAX_VALUE;
+        for (int i : arr) {
+                if(i < smallest){
+                
+                second_smallest = smallest;
+                smallest = i;
+                }
+                else if(i  < second_smallest && smallest < i)
+                second_smallest = i;
+        }
+        
+        System.out.println(second_smallest);
+    }
+}
