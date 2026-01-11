@@ -1,0 +1,13 @@
+import java.util.stream.*;
+import java.util.List;
+import java.util.Optional;
+class Main {
+   static  public void main(String[] args) {
+        List<Integer> list = List.of(5, 11, 20);
+        List<Integer> result = list.stream()
+        .filter(x -> x > 10)
+        .map(x -> x * 2)
+        .collect(Collectors.toList());
+     System.out.println("Stream result: " + result);
+    }
+}
