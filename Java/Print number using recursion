@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a no : ");
+        int no = sc.nextInt();
+        num(no,1);
+        
+        sc.close();
+    }
+    static void num(int no,int start){
+    if (start > no)
+        return;
+
+    System.out.print(start + " ");
+    num(no, start + 1);
+}
+
+}
