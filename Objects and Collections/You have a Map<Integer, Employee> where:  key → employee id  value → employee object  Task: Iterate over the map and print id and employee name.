@@ -21,7 +21,7 @@ class Main {
        
         for(Map.Entry<Integer, Employee> e : obj.entrySet()){
             System.out.println("Id : "+ e.getKey());
-            System.out.println("Id : "+ e.getValue().name);
+            System.out.println("Name : "+ e.getValue().name);
         }
         
     }
