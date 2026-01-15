@@ -1,0 +1,36 @@
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter number of entries :");
+        int no = sc.nextInt();
+        sc.nextLine();
+        
+        HashMap<Integer, Employee> obj = new HashMap<>();
+        for(int i = 0; i < no; i++){
+            System.out.print("Enter id : ");
+            int id = sc.nextInt();
+            sc.nextLine();
+            System.out.print("Enter name : ");
+            String name = sc.nextLine();
+         obj.put(id, new Employee(id, name));
+            
+        }
+       
+        for(Map.Entry<Integer, Employee> e : obj.entrySet()){
+            System.out.println("Id : "+ e.getKey());
+            System.out.println("Id : "+ e.getValue().name);
+        }
+        
+    }
+}
+class Employee{
+    int id;
+    String name;
+    Employee(int id, String name){
+        this.name = name;
+        this.id = id;
+    }
+}
