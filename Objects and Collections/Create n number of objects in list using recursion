@@ -1,0 +1,28 @@
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+
+        List<Hello> list = new ArrayList<>();
+        createObjects(list, 1);
+
+    }
+
+    static void createObjects(List<Hello> list, int count) {
+        if (count == 0)
+            return;
+
+        list.add(new Hello("Obj" + count, count));
+        createObjects(list, count + 1);
+    }
+}
+
+class Hello {
+    String name;
+    int id;
+
+    Hello(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+}
