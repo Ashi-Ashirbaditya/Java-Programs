@@ -1,0 +1,33 @@
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        List<Student> coll = new ArrayList<>();
+        System.out.print("Enter total elements: ");
+        int n= sc.nextInt();
+        sc.nextLine();
+        for(int i =1; i<=n ; i++){
+            System.out.print("Enter id: ");
+            int id = sc.nextInt();
+            sc.nextLine();
+            System.out.print("Enter name: ");
+            String name = sc.nextLine();
+            coll.add(new Student(id, name));
+        }
+        for(Student s: coll){
+        System.out.println("Id = " +s.id );
+        System.out.println("Name = " +s.name);
+        
+            
+        }
+        sc.close();
+    }
+}
+class Student{
+    int id;
+    String name;
+    Student(int id, String name){
+        this.id = id;
+        this.name =name;
+    }
+}
