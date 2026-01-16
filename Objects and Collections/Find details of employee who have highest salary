@@ -1,0 +1,47 @@
+import java.util.*;
+
+class Main {
+    static Scanner sc = new Scanner(System.in);
+    static int n;
+    
+    public static void main(String[] args) {
+        
+        List<Employee> emp = new ArrayList<>();
+        System.out.print("Enter total no. of Employees : ");
+        n= sc.nextInt();
+        sc.nextLine();
+        createEmp(emp,1);
+        Optional<Employee> obj=emp.stream()
+        .max(Comparator.comparingInt(e -> e.salary));
+        
+        obj.ifPresent(a -> {
+        System.out.println("Id = " + a.id);
+        System.out.println("Name = " + a.name);
+        System.out.println("Salary = " + a.salary);
+        });
+    }
+    static void createEmp(List<Employee> obj, int num)
+    {
+        if(num > n)
+        return;
+        System.out.print("Enter Name : ");
+        String name = sc.nextLine();
+        System.out.print("Enter Salary : ");
+        int sal = sc.nextInt();
+        sc.nextLine();
+        
+        obj.add(new Employee(num, name, sal));
+        createEmp(obj ,num+1);
+    }
+}
+class Employee{
+    int id;
+    String name;
+    int salary;
+    Employee(int id, String name, int salary){
+        this.id = id;
+        this.salary = salary;
+        this.name = name;
+    }
+
+}
