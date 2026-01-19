@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int arr[] = {52, 52, 95, 41, 89, 5, 3, 78};
+        
+        for (int i = 0; i < arr.length -1; i++) {
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                swap(arr, j, j + 1);
+                }
+            }
+        }
+
+        for(int i: arr)
+        System.out.print(i + " ");
+        
+        sc.close();
+    }
+    static void swap(int arr[], int num, int num2){
+        int temp = arr[num];
+        arr[num] = arr[num2];
+        arr[num2] = temp;
+    }
+}
