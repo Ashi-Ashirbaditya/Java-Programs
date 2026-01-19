@@ -1,0 +1,58 @@
+import java.util.*;
+import java.util.stream.*;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        List<Employee> emp = new ArrayList<>();
+        System.out.print("Enter no. of employees: ");
+        int no = sc.nextInt();
+        
+        for(int i =1; i <= no; i++)
+        emp.add(new Employee(i, "Emp" + i , (long)(Math.random()*100000), "Dept1"));
+        
+        for(int i = (int)(Math.random()*10)+1; i <= no; i++)
+        emp.add(new Employee(i, "Emp" + i , (long)(Math.random()*100000), "Dept2"));
+        
+        for(int i = (int)(Math.random()*10)+1; i <= no; i++)
+        emp.add(new Employee(i, "Emp" + i , (long)(Math.random()*100000), "Dept3"));
+        
+        emp.forEach(System.out::println);
+        
+         System.out.println("RESULT");
+        
+       Map<String, Optional<Employee>> map =
+    emp.stream()
+       .collect(Collectors.groupingBy(
+           Employee::getDept,
+           Collectors.maxBy(Comparator.comparingLong(Employee::getSal))
+       ));
+
+map.forEach((dept, e) -> {
+    System.out.println(dept + " => " + e.get());
+});
+
+    }
+}
+class Employee{
+    int id;
+    String name;
+    long sal;
+    String dept;
+    Employee(int id, String name, long sal, String dept){
+        this.id = id;
+        this.name = name;
+        this.dept = dept;
+        this.sal = sal;
+    }
+    long getSal(){
+        return sal;
+    }
+    String getDept(){
+        return dept;
+    }
+    @Override
+    public String toString(){
+        return "Id = " + id +", Name = " +name + ",Salary = "+ sal +", Department = " +dept ;
+    }
+}
