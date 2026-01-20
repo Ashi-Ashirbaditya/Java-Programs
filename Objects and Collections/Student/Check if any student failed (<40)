@@ -1,0 +1,53 @@
+import java.util.*;
+import java.util.stream.*;
+
+class Main {
+    static int no;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter total number of objects : ");
+        no = sc.nextInt();
+        List<Student> stu = new ArrayList<>();
+        crete(stu, 1);
+        
+         System.out.println("All Students");
+        stu.forEach(System.out::println);
+        
+        boolean b = stu.stream()
+                            .anyMatch(a -> a.getMark() <40);
+                                
+        System.out.println("RESULT");
+        if(b)System.out.println("Fail");
+                                
+        
+    }
+    static void crete(List<Student> ar, int n){
+        if(n > no)
+        return;
+        
+        int mark = (int) (Math.random()*100 +1);
+        ar.add(new Student(n, "Stu" + n, mark));
+        crete(ar, n+1);
+    }
+}
+class Student{
+    int id;
+    String name;
+    int mark;
+    Student(int id, String name, int mark){
+        this.id = id;
+        this.name = name;
+        this.mark = mark;
+    }
+    int getMark(){
+        return mark;
+    }
+    String getName(){
+        return name;
+    }
+    
+    @Override
+    public String toString(){
+        return "id = " + id + ", Name = " + name  + ", Mark = " + mark;
+    }
+}
