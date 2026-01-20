@@ -10,10 +10,13 @@ class Main {
         List<Student> stu = new ArrayList<>();
         crete(stu, 1);
         
-        List<Student> res = stu.stream()
+        System.out.println("All Students");
+        stu.forEach(System.out::println);
+        
+        Stream<Student> res = stu.stream()
                             .filter(s -> s.getMark() >60);
         
-        
+        System.out.println("RESULT");
         res.forEach(System.out::println);
     }
     static void crete(List<Student> ar, int n ){
