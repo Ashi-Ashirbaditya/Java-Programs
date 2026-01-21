@@ -1,0 +1,16 @@
+import java.util.*;
+import java.util.stream.*;
+
+class Main {
+    public static void main(String[] args) {
+
+        List<Integer> nums = Arrays.asList(5, 10, 15, 20, 25, 30);
+        
+        int res = nums.stream()
+                    .filter(a -> a%2 == 0)
+                    .mapToInt(a -> a*a)
+                    .sum();
+        
+    System.out.println(res);
+    }
+}
