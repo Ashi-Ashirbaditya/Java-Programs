@@ -1,0 +1,19 @@
+import java.util.*;
+import java.util.stream.*;
+
+class Main {
+    public static void main(String[] args) {
+
+        List<String> names = Arrays.asList("java", "spring", "java", "boot", "spring", "java");
+        
+        Map<String, Long> res = names.stream()
+                                     .collect(Collectors.groupingBy(
+                                         s -> s, 
+                                         Collectors.counting()
+                                     ));
+        
+    res.forEach((word, freq)->{
+    System.out.println(word + " = " + freq);
+    });
+    }
+}
