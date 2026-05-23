@@ -1,0 +1,18 @@
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter String1 : ");
+        String str = sc.nextLine().toLowerCase();
+        System.out.print("Enter String2 : ");
+        String str2 = sc.nextLine().toLowerCase();
+        
+        if(str.length() == str2.length()){
+        str = str + str;
+        System.out.println(str.contains(str2)?"Rotation":"Not a rotation");}
+        else 
+        System.out.println("Not a rotation");
+        sc.close();
+    }
+}
